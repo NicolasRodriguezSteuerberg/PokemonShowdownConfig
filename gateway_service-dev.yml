@@ -3,6 +3,13 @@ spring:
     gateway:
       routes:
         - id: moves
-          uri: http://localhost:8082
+          uri: http://move_service:8080
           predicates:
             - Path=/api/moves/**
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST}
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
