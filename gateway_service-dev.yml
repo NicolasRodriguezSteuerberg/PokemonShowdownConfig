@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: moves
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/moves/**
